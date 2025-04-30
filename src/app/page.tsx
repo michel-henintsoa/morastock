@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <header 
       className=
-        "after:bg-gray-900 after:w-[100%] after:h-[3px] after:rounded-full after:absolute after:bottom-0 relative pb-3 w-[100%]"
+        "after:bg-gray-900 after:w-full after:h-[3px] after:rounded-full after:absolute after:bottom-0 relative pb-3 w-full mt-2"
       >
         <div id="icon" className="grid grid-cols-2 grid-rows-1 w-[150]">
           <div className="w-[67] h-[60] bg-[#1D1C24] rounded-xl"></div>
