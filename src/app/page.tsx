@@ -22,8 +22,9 @@ export default function Home() {
     <>
       <header 
       className=
-        "after:bg-gray-900 after:w-full after:h-[3px] after:rounded-full after:absolute after:bottom-0 relative pb-2 w-full mt-2"
+        "after:bg-gray-900 after:w-full after:h-[3px] after:rounded-full after:absolute after:bottom-0 relative pb-2 w-full mt-2 flex justify-between"
       >
+        
         <div id="icon" className="grid grid-cols-2 grid-rows-1 w-[150] align-center">
           <div className="w-[40] h-[40] bg-[#1D1C24] rounded"></div>
           <div className="w-[100] h-[60] font-inter align-bottom font-bold">
@@ -36,7 +37,7 @@ export default function Home() {
             <button
               key={item.label}
               onClick={() => handleNavClick(item.label)}
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg transition-colors ${
                 activeNav === item.label
                   ? 'text-blue-600'
                   : 'text-gray-600 hover:text-gray-900'
