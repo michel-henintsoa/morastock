@@ -1,6 +1,23 @@
-import Image from "next/image";
+"use client";
+import Link from 'next/link';
+import { InfoIcon, SendIcon, XIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 export default function Home() {
+  const [activeNav, setActiveNav] = useState('Chat');
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigationItems = [
+    { label: "Dashboard", route: "/dashboard" },
+    { label: "Chat", route: "/chat" },
+    { label: "Stock", route: "/stock" },
+    { label: "Employee", route: "/employee" }
+  ];
+  const handleNavClick = (label: string) => {
+    setActiveNav(label);
+    console.log(`Navigate to ${label}`);
+  };
   return (
     <>
       <header 
@@ -14,8 +31,40 @@ export default function Home() {
             <h4>Stokage</h4>
           </div>
         </div>
-        <div>
-          
+        <div className="flex items-center space-x-8">
+          {navigationItems.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item.label)}
+              className={`text-lg font-medium transition-colors ${
+                activeNav === item.label
+                  ? 'text-blue-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+
+          {/* Search Bar */}
+          <div className="relative w-64">
+            <Input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search..."
+              className="w-full rounded-full bg-gray-50 pl-4 pr-10"
+            />
+            {searchQuery && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1"
+                onClick={() => setSearchQuery('')}
+              >
+                <XIcon className="w-4 h-4" />
+              </Button>
+            )}
+          </div>
         </div>
       </header>
     </>
