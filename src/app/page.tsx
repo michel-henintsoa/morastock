@@ -32,14 +32,14 @@ export default function Home() {
             <h4>Stokage</h4>
           </div>
         </div>
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-2">
           {navigationItems.map((item) => (
             <button
               key={item.label}
               onClick={() => handleNavClick(item.label)}
-              className={`text-lg transition-colors ${
+              className={`text-lg transition-colors p-0.5 px-2 ${
                 activeNav === item.label
-                  ? 'text-blue-600'
+                  ? 'text-blue-600 bg-zinc-100 rounded'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
