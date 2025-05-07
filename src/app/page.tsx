@@ -25,7 +25,7 @@ export default function Home() {
         {`
           after:w-full after:h-[1px] after:rounded-full after:absolute after:bottom-0 after:bg-zinc-500
           relative pb-1 w-full mt-2 flex justify-between
-          `}
+        `}
       >
         {/* Logo */}
         <div id="icon" className="grid grid-cols-2 grid-rows-1 w-[150] align-center">
