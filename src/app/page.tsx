@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <header 
       className=
-        "after:bg-gray-900 after:w-full after:h-[3px] after:rounded-full after:absolute after:bottom-0 relative pb-2 w-full mt-2 flex justify-between"
+        "after:w-full after:h-[1px] after:rounded-full after:absolute after:bottom-0 after:bg-zinc-500 relative pb-1 w-full mt-2 flex justify-between"
       >
         
         <div id="icon" className="grid grid-cols-2 grid-rows-1 w-[150] align-center">
@@ -69,5 +69,6 @@ export default function Home() {
         </div>
       </header>
     </>
+
   );
 }
